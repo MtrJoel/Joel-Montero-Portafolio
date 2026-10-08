@@ -1,279 +1,269 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Joel Montero | Software Engineer</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joel Montero — Backend Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <!-- Fuentes de Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+  <div class="overlay" id="overlay"></div>
 
-    <!-- Iconos de FontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <!-- HERO HEADER -->
-      <header>
-        <div class="status-badge">
-          <span class="status-dot"></span>
-          Disponible para Oportunidades
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-title"><span class="dot"></span>joel-montero/</div>
+      <nav class="tree">
+        <div class="tree-item" onclick="goTo('top')"><span class="glyph">📄</span>README.md</div>
+        <div class="tree-item" onclick="goTo('stack')"><span class="glyph">⚙</span>stack.json</div>
+        <div class="tree-folder">projects/</div>
+        <div class="tree-sub">
+          <div class="tree-item" onclick="goTo('projects')"><span class="glyph">▸</span>quorom.md</div>
+          <div class="tree-item" onclick="goTo('projects')"><span class="glyph">▸</span>smart-notes.md</div>
+          <div class="tree-item" onclick="goTo('mas-proyectos')"><span class="glyph">▸</span>otros/</div>
         </div>
-        <h1>Joel Montero</h1>
-        <div class="subtitle">
-          Software Engineer | Backend & System Architecture
-        </div>
+        <div class="tree-item" onclick="goTo('education')" style="margin-top:0.9rem"><span class="glyph">🎓</span>education.md</div>
+        <div class="tree-item" onclick="goTo('contact')"><span class="glyph">▶</span>contact.sh</div>
+      </nav>
+      <div class="sidebar-foot">
+        Santo Domingo, RD<br>
+        Ingeniería de Software · UFHEC
+      </div>
+    </aside>
 
-        <div class="contact-bar">
-          <!-- Correo protegido con copia interactiva -->
-          <button class="contact-item copy-btn" onclick="copyEmail()" id="emailBtn">
-            <i class="fa-solid fa-envelope"></i> Email
-            <span class="copy-tooltip" id="copyTooltip">¡Copiado al portapapeles!</span>
-          </button>
-
-          <span class="contact-item">
-            <i class="fa-solid fa-location-dot"></i> Santo Domingo, RD
-          </span>
-          <a
-            href="https://github.com/MtrJoel"
-            target="_blank"
-            class="contact-item"
-          >
-            <i class="fa-brands fa-github"></i> github.com/MtrJoel
-          </a>
-          <a
-            href="https://www.linkedin.com/in/joel-montero-166488226/"
-            target="_blank"
-            class="contact-item"
-          >
-            <i class="fa-brands fa-linkedin"></i> linkedin.com/in/joelmontero
-          </a>
-        </div>
-      </header>
-
-      <!-- RESUMEN PROFESIONAL -->
-      <div class="section-title">
-        <span class="section-title-text">01. Perfil Profesional</span>
-        <div class="section-title-line"></div>
+    <div class="main">
+      <div class="topbar">
+        <button class="btn-menu" onclick="toggleMenu()">☰</button>
+        <span class="mono" style="font-size:0.85rem;color:var(--muted)">joel-montero/</span>
+        <span></span>
       </div>
 
-      <div class="summary-box">
-        Estudiante avanzado de Ingeniería de Software (<strong>Junior Backend Developer</strong>) enfocado en el desarrollo de APIs robustas y arquitecturas Backend.
-        Experiencia práctica construyendo servicios con
-        <strong>Java (Spring Boot)</strong> y manejo de
-        <strong>bases de datos relacionales (SQL)</strong>. Experiencia previa
-        desarrollando aplicaciones móviles con <strong>Dart y Flutter</strong>,
-        así como proyectos web interactivos y extensiones para el navegador
-        utilizando <strong>JavaScript, HTML y CSS</strong>. Apasionado por las
-        buenas prácticas de ingeniería, consistencia transaccional y
-        optimización de rendimiento.
-      </div>
+      <main class="content" id="top">
 
-      <!-- HABILIDADES TÉCNICAS -->
-      <div class="section-title">
-        <span class="section-title-text">02. Stack Tecnológico</span>
-        <div class="section-title-line"></div>
-      </div>
+        <div class="status-pill"><span class="dot"></span>disponible para oportunidades</div>
 
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h4><i class="fa-solid fa-server"></i> Backend & APIs</h4>
-          <ul class="tag-list">
-            <li>Java / Spring Boot</li>
-            <li>Node.js / Express</li>
-            <li>RESTful APIs / JWT</li>
-          </ul>
+        <h1 class="name">Joel Montero</h1>
+        <p class="role">Backend Engineer · Estudiante de Ingeniería de Software</p>
+        <p class="prompt">&gt; construyendo sistemas backend confiables<span class="cursor"></span></p>
+
+        <div class="meta-row">
+          <span>Santo Domingo, RD</span>
+          <a href="https://github.com/MtrJoel" target="_blank" rel="noopener">github.com/MtrJoel</a>
+          <a href="https://www.linkedin.com/in/joel-montero-166488226/" target="_blank" rel="noopener">linkedin.com/in/joelmontero</a>
+          <button class="copy-email" onclick="copyEmail()">✉ copiar email</button>
         </div>
 
-        <div class="skill-card">
-          <h4><i class="fa-solid fa-database"></i> Bases de Datos</h4>
-          <ul class="tag-list">
-            <li>SQL Server / PostgreSQL</li>
-            <li>MongoDB (NoSQL)</li>
-            <li>Diseño de Schemas</li>
-            <li>Transacciones ACID</li>
-          </ul>
+        <div class="stat-strip">
+          <div class="stat"><div class="num">5</div><div class="label">proyectos construidos</div></div>
+          <div class="stat"><div class="num">2</div><div class="label">en producción activa</div></div>
+          <div class="stat"><div class="num">1</div><div class="label">publicado en Chrome Web Store</div></div>
+          <div class="stat"><div class="num">2024</div><div class="label">— 2028 · UFHEC</div></div>
         </div>
 
-        <div class="skill-card">
-          <h4><i class="fa-solid fa-code"></i> Frontend & Mobile</h4>
-          <ul class="tag-list">
-            <li>Flutter / Dart</li>
-            <li>JavaScript (ES6+) / React</li>
-            <li>Chrome Extensions API (Manifest V3)</li>
-            <li>HTML5 / CSS3 Responsive</li>
-          </ul>
-        </div>
-      </div>
+        <section>
+          <div class="section-file">README.md</div>
+          <h2>Perfil</h2>
+          <p class="profile-text prose">
+            Estudiante avanzado de Ingeniería de Software enfocado en el desarrollo de
+            <strong>APIs robustas y arquitecturas backend</strong>. Experiencia práctica construyendo
+            servicios con <strong>Java (Spring Boot)</strong> y bases de datos relacionales, y en el último
+            proyecto, llevando un producto completo de punta a punta: backend, frontend en
+            <strong>React</strong> y despliegue en producción. Experiencia previa con <strong>Flutter/Dart</strong>
+            para aplicaciones móviles, y con extensiones de navegador publicadas en producción.
+            Apasionado por las buenas prácticas de ingeniería, la consistencia transaccional y la
+            optimización de rendimiento.
+          </p>
+        </section>
 
-      <!-- PROYECTOS DESTACADOS -->
-      <div class="section-title">
-        <span class="section-title-text">03. Proyectos Destacados</span>
-        <div class="section-title-line"></div>
-      </div>
+        <section id="stack">
+          <div class="section-file">stack.json</div>
+          <h2>Stack técnico</h2>
+          <div class="stack-grid">
+            <div class="stack-group">
+              <h3>backend &amp; apis</h3>
+              <ul><li>Java / Spring Boot</li><li>Node.js / Express</li><li>RESTful APIs / JWT</li><li>Spring Security</li></ul>
+            </div>
+            <div class="stack-group">
+              <h3>bases de datos</h3>
+              <ul><li>PostgreSQL</li><li>SQL Server</li><li>MongoDB (NoSQL)</li><li>Diseño de schemas / ACID</li></ul>
+            </div>
+            <div class="stack-group">
+              <h3>frontend &amp; mobile</h3>
+              <ul><li>React / JavaScript (ES6+)</li><li>Flutter / Dart</li><li>Chrome Extensions (Manifest V3)</li><li>HTML5 / CSS3 Responsive</li></ul>
+            </div>
+          </div>
+        </section>
 
-      <!-- PROYECTO PEAJE -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">
-            <a href="https://github.com/MtrJoel/peaje-api" target="_blank">
-              Sistema de Gestión de Peaje y Cobro Vehicular
-              <i class="fa-solid fa-arrow-up-right-from-square project-link-icon"></i>
-            </a>
-          </h3>
-          <span class="project-tech">Java • POO • SQL</span>
-        </div>
-        <p class="project-desc">
-          Desarrollo de un sistema backend para el procesamiento transaccional
-          de cobros en estaciones de peaje, validación de saldos en tiempo real
-          y categorización automática de vehículos.
-        </p>
-        <ul class="project-bullets">
-          <li>
-            <strong>Lógica de Dominio:</strong> Implementación de algoritmos de
-            cálculo de tarifa dinámica según tipo de vehículo, ejes y estado de
-            cuenta.
-          </li>
-          <li>
-            <strong>Manejo de Transacciones:</strong> Módulo de validación de
-            fondos y actualización atómica de balance de usuarios para evitar
-            cobros duplicados.
-          </li>
-          <li>
-            <strong>Arquitectura Modulada:</strong> Aplicación de principios
-            SOLID, encapsulamiento riguroso y getters/setters limpios para alta
-            mantenibilidad.
-          </li>
-        </ul>
-      </div>
+        <section id="projects">
+          <div class="section-file">projects/</div>
+          <h2>Proyectos destacados</h2>
 
-      <!-- PROYECTO BANKING -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">
-            <a href="https://github.com/MtrJoel/system/tree/main" target="_blank">
-              Backend Core Bancario y API Transaccional
-              <i class="fa-solid fa-arrow-up-right-from-square project-link-icon"></i>
-            </a>
-          </h3>
-          <span class="project-tech">Spring Boot • SQL Server • REST</span>
-        </div>
-        <p class="project-desc">
-          API RESTful para la simulación de operaciones bancarias fundamentales,
-          gestión de cuentas de ahorro/corrientes y registro de auditoría de
-          transacciones financieras.
-        </p>
-        <ul class="project-bullets">
-          <li>
-            <strong>Transferencias Atómicas:</strong> Desarrollo de endpoints
-            resilientes para transferencias interbancarias con control estricto
-            de concurrencia.
-          </li>
-          <li>
-            <strong>Persistencia de Datos:</strong> Mapeo relacional avanzado
-            utilizando Spring Data JPA y consultas optimizadas sobre SQL Server.
-          </li>
-        </ul>
-      </div>
+          <!-- Quorom: texto + mock navegador -->
+          <div class="feature-card amber-ring">
+            <div class="feature-text">
+              <div class="deploy-title"><span class="status-dot"></span><h3>Quorom Académico</h3></div>
+              <div class="tags">
+                <span class="tag">Spring Boot</span><span class="tag">React</span>
+                <span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Full Stack</span>
+              </div>
+              <p class="deploy-desc">
+                Plataforma full-stack desarrollada de cero para resolver un problema real identificado
+                en mi propia universidad: la falta de un canal organizado para que los estudiantes
+                consoliden solicitudes de asignaturas y horarios ante la dirección de carrera.
+                Presentada formalmente como propuesta institucional.
+              </p>
+              <ul class="changelog">
+                <li><strong>Full stack real:</strong> backend Spring Boot + API REST, frontend React, PostgreSQL — diseño, implementación y despliegue individuales.</li>
+                <li><strong>Demanda colectiva:</strong> estudiantes se suman a solicitudes existentes en vez de duplicarlas.</li>
+                <li><strong>Producción:</strong> Docker en Render + Vercel, CORS y variables de entorno configuradas.</li>
+              </ul>
+              <div class="feature-links">
+                <a href="https://solicitud-asignaturas-frontend.vercel.app" target="_blank" rel="noopener">ver demo en vivo ↗</a>
+                <a href="https://github.com/MtrJoel/solicitud-asignaturas" target="_blank" rel="noopener">repositorio ↗</a>
+              </div>
+            </div>
 
-      <!-- PROYECTO SMART NOTES (CHROME STORE) -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">
-            <a
-              href="https://chromewebstore.google.com/detail/smart-notes/aopgmpnlbjpgnnnhpdidjkhcbgbdflnc"
-              target="_blank"
-            >
-              Smart Notes — Chrome Extension (Published)
-              <i class="fa-solid fa-arrow-up-right-from-square project-link-icon"></i>
-            </a>
-          </h3>
-          <span class="project-tech">JavaScript • Chrome Web Store • Manifest V3</span>
-        </div>
-        <p class="project-desc">
-          Extensión oficial para Google Chrome publicada en el Chrome Web Store
-          diseñada para potenciar la productividad mediante la toma de notas
-          rápidas, organización contextual y persistencia local de datos
-          mientras se navega por la web.
-        </p>
-        <ul class="project-bullets">
-          <li>
-            <strong>Despliegue Oficial:</strong> Publicación y gestión de ciclo
-            de vida del producto directamente en la tienda oficial de
-            extensiones de Google Chrome.
-          </li>
-          <li>
-            <strong>Integración con el Navegador:</strong> Implementación con
-            Manifest V3 utilizando Storage APIs para sincronización eficiente y
-            persistente sin depender de servidores externos.
-          </li>
-          <li>
-            <strong>UI Ligera y Contextual:</strong> Inyección de interfaz sin
-            impacto en el rendimiento de carga del navegador ni fricción de
-            lectura en el DOM.
-          </li>
-        </ul>
-      </div>
+            <div class="browser-mock">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">solicitud-asignaturas-frontend.vercel.app</div>
+              </div>
+              <div class="quorom-preview">
+                <div class="q-sidebar">
+                  <div class="q-logo"></div>
+                  <div class="q-nav-item active"></div>
+                  <div class="q-nav-item"></div>
+                  <div class="q-nav-item"></div>
+                </div>
+                <div class="q-main">
+                  <div class="q-banner"></div>
+                  <div class="q-cards">
+                    <div class="q-card"><div class="line"></div><div class="line short"></div><div class="btn"></div></div>
+                    <div class="q-card"><div class="line"></div><div class="line short"></div><div class="btn"></div></div>
+                    <div class="q-card"><div class="line"></div><div class="line short"></div><div class="btn"></div></div>
+                    <div class="q-card"><div class="line"></div><div class="line short"></div><div class="btn"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="preview-label">vista previa — recreación de la interfaz real</div>
+            </div>
+          </div>
 
-      <!-- PROYECTO BETHABITS -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3 class="project-title">
-            <a href="https://github.com/MtrJoel/betHabits" target="_blank">
-              betHabits App
-              <i class="fa-solid fa-arrow-up-right-from-square project-link-icon"></i>
-            </a>
-          </h3>
-          <span class="project-tech">Flutter • Dart • Cross-Platform</span>
-        </div>
-        <p class="project-desc">
-          Aplicación móvil multiplataforma orientada al seguimiento de hábitos
-          con un enfoque gamificado y mecánico de compromiso/apuestas personales
-          para elevar la disciplina y tasa de cumplimiento del usuario.
-        </p>
-        <ul class="project-bullets">
-          <li>
-            <strong>Gamificación y Lógica de Hábitos:</strong> Sistema de
-            cálculo de rachas, recompensas y mecánicas de accountability para
-            fomentar consistencia diaria.
-          </li>
-          <li>
-            <strong>Desarrollo Multiplataforma:</strong> Interfaz fluida
-            adaptada a patrones de diseño moderno, construida íntegramente con
-            Flutter y Dart.
-          </li>
-          <li>
-            <strong>Arquitectura Limpia:</strong> Separación rigurosa de módulos
-            de dominio, datos y estado reactivo de la UI.
-          </li>
-        </ul>
-      </div>
+          <!-- Smart Notes: texto + mock store -->
+          <div class="feature-card indigo-ring">
+            <div class="feature-text">
+              <div class="deploy-title"><span class="status-dot"></span><h3>Smart Notes — Chrome Extension</h3></div>
+              <div class="tags"><span class="tag">JavaScript</span><span class="tag">Manifest V3</span><span class="tag">Chrome Web Store</span></div>
+              <p class="deploy-desc">
+                Extensión oficial publicada en la Chrome Web Store para toma de notas rápidas y
+                organización contextual mientras se navega, con persistencia local sin depender de
+                servidores externos.
+              </p>
+              <ul class="changelog">
+                <li><strong>Despliegue oficial:</strong> publicación y ciclo de vida gestionados en la tienda de Chrome.</li>
+                <li><strong>Integración:</strong> Storage APIs para sincronización persistente sin backend.</li>
+                <li><strong>UI ligera:</strong> inyección sin impacto en el rendimiento de carga del navegador.</li>
+              </ul>
+              <div class="feature-links">
+                <a href="https://chromewebstore.google.com/detail/smart-notes/aopgmpnlbjpgnnnhpdidjkhcbgbdflnc" target="_blank" rel="noopener">ver en la tienda ↗</a>
+              </div>
+            </div>
 
-      <!-- EDUCACIÓN -->
-      <div class="section-title">
-        <span class="section-title-text">04. Educación</span>
-        <div class="section-title-line"></div>
-      </div>
+            <div class="browser-mock">
+              <div class="browser-bar">
+                <div class="browser-dots"><span></span><span></span><span></span></div>
+                <div class="browser-url">chromewebstore.google.com/detail/smart-notes</div>
+              </div>
+              <div class="store-card">
+                <div class="store-icon">📝</div>
+                <div class="store-info">
+                  <strong>Smart Notes</strong>
+                  <div class="cat">Productividad · Extensión de Chrome</div>
+                  <div class="store-stars">★★★★★ <span style="color:var(--muted)">Disponible en la Chrome Web Store</span></div>
+                </div>
+              </div>
+              <div class="store-mini-ui">
+                <div class="store-page-line"></div>
+                <div class="store-page-line" style="width:60%"></div>
+                <div class="store-page-line" style="width:72%"></div>
+                <div class="sticky-note"><div class="l"></div><div class="l" style="width:70%"></div></div>
+              </div>
+              <div class="preview-label">vista previa — recreación ilustrativa</div>
+            </div>
+          </div>
+        </section>
 
-      <div class="edu-card">
-        <div class="edu-info">
-          <h3>Ingeniería de Software</h3>
-          <p>Universidad Federico Henríquez y Carvajal (UFHEC)</p>
-        </div>
-        <span class="edu-date">2024 – 2028 (En curso)</span>
-      </div>
+        <section id="mas-proyectos">
+          <div class="section-file">projects/otros/</div>
+          <h2>Más proyectos</h2>
+          <div class="compact-grid">
+            <div class="compact-card">
+              <h3>Sistema de Gestión de Peaje y Cobro Vehicular</h3>
+              <div class="tags"><span class="tag">Java</span><span class="tag">POO</span><span class="tag">SQL</span></div>
+              <p class="deploy-desc">Backend para procesamiento transaccional de cobros en estaciones de peaje, validación de saldos en tiempo real y categorización automática de vehículos.</p>
+              <ul class="changelog">
+                <li><strong>Lógica de dominio:</strong> tarifa dinámica según tipo de vehículo y estado de cuenta.</li>
+                <li><strong>Transacciones:</strong> actualización atómica de balance, sin cobros duplicados.</li>
+              </ul>
+              <div class="feature-links"><a href="https://github.com/MtrJoel/peaje-api" target="_blank" rel="noopener">repositorio ↗</a></div>
+            </div>
+
+            <div class="compact-card">
+              <h3>Backend Core Bancario y API Transaccional</h3>
+              <div class="tags"><span class="tag">Spring Boot</span><span class="tag">SQL Server</span><span class="tag">REST</span></div>
+              <p class="deploy-desc">API RESTful para simulación de operaciones bancarias, gestión de cuentas y auditoría de transacciones.</p>
+              <ul class="changelog">
+                <li><strong>Transferencias atómicas:</strong> control estricto de concurrencia.</li>
+                <li><strong>Persistencia:</strong> mapeo relacional avanzado con Spring Data JPA.</li>
+              </ul>
+              <div class="feature-links"><a href="https://github.com/MtrJoel/system/tree/main" target="_blank" rel="noopener">repositorio ↗</a></div>
+            </div>
+
+            <div class="compact-card">
+              <h3>betHabits App</h3>
+              <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Cross-Platform</span></div>
+              <p class="deploy-desc">App móvil multiplataforma para seguimiento de hábitos con mecánica de compromiso/apuestas personales.</p>
+              <ul class="changelog">
+                <li><strong>Gamificación:</strong> cálculo de rachas y mecánicas de accountability.</li>
+                <li><strong>Arquitectura limpia:</strong> dominio, datos y estado reactivo separados.</li>
+              </ul>
+              <div class="feature-links"><a href="https://github.com/MtrJoel/betHabits" target="_blank" rel="noopener">repositorio ↗</a></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="education">
+          <div class="section-file">education.md</div>
+          <h2>Educación</h2>
+          <div class="edu-card">
+            <h3>Ingeniería de Software</h3>
+            <div class="inst">Universidad Federico Henríquez y Carvajal (UFHEC)</div>
+            <div class="years">2024 – 2028 · en curso</div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <div class="section-file">contact.sh</div>
+          <h2>Contacto</h2>
+          <div class="contact-box">
+            <span class="mono">$ ./contact.sh --open</span>
+            <div class="contact-links">
+              <button class="copy-email" onclick="copyEmail()" style="font-size:0.92rem">✉ copiar email</button>
+              <a href="https://github.com/MtrJoel" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/joel-montero-166488226/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            </div>
+          </div>
+        </section>
+
+        <footer>joel-montero/ · build desplegado en Render · última actualización 2026</footer>
+
+      </main>
     </div>
+  </div>
+<script src="./app.js"></script>
 
-    <!-- SCRIPT DE COPIA DE CORREO -->
-    <script src="app.js"></script>
-  </body>
+</body>
 </html>
